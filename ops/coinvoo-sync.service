@@ -1,0 +1,14 @@
+# Refreshes the bot-DB snapshot Coinvoo matches against. Started every 5 minutes by coinvoo-sync.timer.
+# Install: docs/07-ops-deploy.md §5. Settings (BOT_DB, BOTDB_SNAPSHOT, BOTDB_REMOTE) go in
+# /etc/default/coinvoo-sync; without that file the script's defaults apply.
+[Unit]
+Description=Coinvoo bot-DB snapshot sync (ops/sync-botdb.sh)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/coinvoo-sync
+ExecStart=/opt/coinvoo-sync/sync-botdb.sh
+Nice=10
+TimeoutStartSec=120

@@ -1,0 +1,14 @@
+{
+  "name": "coinvoo",
+  "version": "1.0.0",
+  "description": "Internal attribution platform: which ad click produced which Telegram member.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  }
+}

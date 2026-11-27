@@ -1,0 +1,26 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# databases
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# logs
+*.log
+logs/
+
+# runtime
+node_modules/
+.DS_Store
+*.swp
+tmp/
+
+# handoff additions
+
+# keep the test fixture (ignore rule above excludes *.db)
+!test/fixtures/recon-sample.db
